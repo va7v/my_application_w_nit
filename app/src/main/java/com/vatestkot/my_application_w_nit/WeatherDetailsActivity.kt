@@ -8,11 +8,8 @@ class WeatherDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather_details)
-        /*
-        val city = intent.extras?.getString("City")
-        val temp = intent.extras?.getString("Temp")
-        cityName.text = "Город: $city"
-        tempC.text = "Температура: $temp" */
+        //val city = intent.extras?.getString("City")
+        //cityName.text = "Город: $city"
         // приём через сериализацию
         val weather = intent.extras?.getSerializable("Weather") as Weather
         cityName.text = "Город: ${weather.city}"
