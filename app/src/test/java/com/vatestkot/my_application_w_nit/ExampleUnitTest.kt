@@ -7,28 +7,19 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-    val test1 = TestDataClass("Russia", "Sochi", +10)
-    val test2 = TestDataClass("Russia", "Chely", -10)
+    val test1 = TestDataClass("Sochi", 20)
+    val test2 = TestDataClass("Chely", 0)
 
     val collection = mutableListOf(test1,test2)
 
     @Test
     fun start() {
-        print(collection.sort())
+        println(collection)
+        println(collection.sort()) // - сортировка прошла успешно
+        // for (n in collection) { println(n.city+" "+n.temp) } //краткий вывод данных
     }
     fun List<TestDataClass>.sort():List<TestDataClass> {
-        // this.sortBy { it.temp } // - :(
-        /*
-        var temp_max : Int = -70
-        var WarmPlace : String = ""
-        for (n in this) {
-            if (n.temp > temp_max) {
-                temp_max = n.temp
-                WarmPlace = n.city
-            }
-        }
-        println("Теплее всего в городе: "+WarmPlace)
-        */
-        return this
+        val sorting = this.sortedBy { it.temp } // :)
+        return sorting
     }
 }

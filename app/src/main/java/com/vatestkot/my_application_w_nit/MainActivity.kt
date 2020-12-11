@@ -10,15 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnGoToDetails.setOnClickListener {
+            val weather = Weather("Анапа", "+5","Пасмурно", "Дождь")
             val intent = Intent(this, WeatherDetailsActivity::class.java)
-
-            intent.putExtra("City", "Анапа")
-            intent.putExtra("Temp", "+10")
-
-/*          передача данных через сериализацию
-            val weather = Weather("Ясно", "Небольшой дождь")
-            intent.putExtra("Weather", "weather")
-*/
+            //intent.putExtra("City", "Адлер")
+            //intent.putExtra("Temp", "+10")
+            intent.putExtra("Weather",  weather)
             startActivity(intent)
         }
     }
