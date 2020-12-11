@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
             val weather = Weather("Анапа", "+5","Пасмурно", "Дождь")
             val intent = Intent(this, WeatherDetailsActivity::class.java)
             //intent.putExtra("City", "Адлер")
-            //intent.putExtra("Temp", "+10")
             intent.putExtra("Weather",  weather)
             startActivity(intent)
         }
